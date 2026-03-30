@@ -1,0 +1,128 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* SEARCH BAR */
+.top_banner {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: #1e293b;
+}
+
+.cityInput {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+}
+
+#btn {
+  padding: 10px 20px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CURRENT WEATHER */
+.main_weather {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weather_icon {
+    position: relative;
+    top: -200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+.rain{
+    position: relative;
+    top: -50px;
+}
+.english_name{
+    position: relative;
+    top: -46px;
+    right: -85%;
+}
+.temperature_in_degree {
+  font-size: 60px;
+  font-weight: bold;
+}
+.degree{
+    font-size: x-large;
+    position: relative;
+    top: -60px;
+    right: -115px;
+}
+.degree_c{
+    font-size: 70px;
+    position: relative;
+    top: -105px;
+    right: -120px;
+}
+.time_image{
+    height: 400px;
+    position: relative;
+    right: -400px;
+    top: -100px;
+    border-radius: 20px;
+}
+.hour_weather_heading {
+  margin: 10px 0;
+}
+
+.hour_weather_template {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.hour_card {
+  min-width: 100px;
+  background: #334155;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* DAILY */
+.dailyWeather_Template {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #334155;
+  text-align: center;
+}
