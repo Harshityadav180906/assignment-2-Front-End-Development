@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accurate Weather</title>
+    <title>Modern Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<body>
+    <div class="container">
+        <form class="search-form">
+            <h1 class="app-title">Weather App</h1>
+            <div class="search-container">
+                <input type="text" name="city" placeholder="Search city..." autocomplete="off">
+                <button type="submit">Search</button>
+            </div>
+        </form>
 
-<form>
-    <input type="text" name="city" placeholder="Enter city name...">
-</form>
+        <div class="weather_template d-none"></div>
+        <div class="hourWeatherTemplate"></div>
+        <div class="dailyWeatherTemplate"></div>
+    </div>
 
-<div class="weather_template"></div>
-<div class="hourWeatherTemplate"></div>
-<div class="dailyWeatherTemplate"></div>
-</body>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
