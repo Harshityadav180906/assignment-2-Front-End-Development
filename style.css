@@ -1,128 +1,144 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
 }
 
-/* BODY */
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+/* Form Styling */
+form {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-/* SEARCH BAR */
-.top_banner {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  background: #1e293b;
+form input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: var(--card-bg);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.cityInput {
-  padding: 10px;
-  width: 250px;
-  border-radius: 8px;
-  border: none;
-}
-
-#btn {
-  padding: 10px 20px;
-  background: #38bdf8;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* CURRENT WEATHER */
-.main_weather {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  margin-bottom: 20px;
+/* Current Weather Template */
+.weather_template {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .weather_icon {
-    position: relative;
-    top: -200px;
-    height: 200px;
-    background-color: white;
-    border-radius: 20px;
+    width: 100px;
+    margin: 20px 0;
 }
-.rain{
-    position: relative;
-    top: -50px;
-}
-.english_name{
-    position: relative;
-    top: -46px;
-    right: -85%;
-}
+
 .temperature_in_degree {
-  font-size: 60px;
-  font-weight: bold;
-}
-.degree{
-    font-size: x-large;
-    position: relative;
-    top: -60px;
-    right: -115px;
-}
-.degree_c{
-    font-size: 70px;
-    position: relative;
-    top: -105px;
-    right: -120px;
-}
-.time_image{
-    height: 400px;
-    position: relative;
-    right: -400px;
-    top: -100px;
-    border-radius: 20px;
-}
-.hour_weather_heading {
-  margin: 10px 0;
+    font-size: 4rem;
+    font-weight: bold;
+    display: inline-block;
 }
 
+.degree, .degree_c {
+    display: inline-block;
+    font-size: 2rem;
+    vertical-align: top;
+    margin-top: 10px;
+}
+
+.time_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hourly Weather - Horizontal Scroll */
 .hour_weather_template {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px 0;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 900px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
 }
 
-.hour_card {
-  min-width: 100px;
-  background: #334155;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
+.hour_weather_template div {
+    min-width: 120px;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
 }
 
-/* DAILY */
+.hour_weather_icon {
+    width: 50px;
+}
+
+/* Daily Weather Table */
 .dailyWeather_Template {
-  margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    overflow-x: auto; /* Makes table scrollable on small phones */
+    margin-top: 20px;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #1e293b;
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 th, td {
-  padding: 10px;
-  border: 1px solid #334155;
-  text-align: center;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+th {
+    background: rgba(255,255,255,0.1);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Responsive Utilities */
+.d-none {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .temperature_in_degree { font-size: 3rem; }
+    th, td { padding: 8px; font-size: 0.8rem; }
 }
