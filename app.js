@@ -15,7 +15,7 @@ function updateUI(data) {
         <h2 class="current_weather">Current Weather</h2>
         <h1 class="english_name">📍 ${cityDetails.EnglishName}</h1>
         <div class="current_weather_flex">
-            <img class="weather_icon" src="icons/${weatherData.WeatherIcon}.svg">
+        <img class="weather_icon" src="./icons/${weatherData.WeatherIcon}.svg">
             <div style="display:flex">
                 <span class="temperature_in_degree">${weatherData.Temperature.Metric.Value}</span>
                 <span class="degree_unit">&deg;C</span>
@@ -34,7 +34,7 @@ function updateUI(data) {
                     <h4>${new Date(hour.DateTime).getHours()}:00</h4>
                     <img src="icons/${hour.WeatherIcon}.svg" width="50">
                     <p><strong>${Math.round((hour.Temperature.Value - 32) * 5/9)}&deg;C</strong></p>
-                    <p style="font-size:0.8rem">${hour.IconPhrase}</p>
+                    <img class="weather_icon" src="./icons/${weatherData.WeatherIcon}.svg">
                 </div>
             `).join('')}
         </div>
